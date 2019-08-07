@@ -1,0 +1,71 @@
+<div class="mt-4 col-8 offset-2">
+  <div class="card">
+    <div class="card-header">Add product Here</div>
+    <div class="card-body">
+      <form #signupForm=ngForm (ngSubmit)="onSubmit()">
+        <div class="form-group row">
+          <label for="inputName3" class="col-sm-2 col-form-label">Product Name</label>
+          <div class="col-sm-10">
+            <input type="text" name="name" class="form-control" id="inputname3" placeholder="Name" [(ngModel)]="form.name" required>
+           
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Price</label>
+          <div class="col-sm-10">
+            <input type="text" name="price" class="form-control" id="inputEmail3" placeholder="Price" [(ngModel)]="form.price" required>
+            
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <label for="inputPasswordConfirmation3" class="col-sm-2 col-form-label">quantity</label>
+          <div class="col-sm-10">
+            <input type="text" name="quantity" class="form-control" id="inputPasswordConfirmation3" placeholder="quantity"
+              [(ngModel)]="form.quantity" required>
+           
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPasswordConfirmation3" class="col-sm-2 col-form-label">Product image</label>
+          <div class="col-sm-10">
+            <input type="file" name="file" class="form-control" id="inputPasswordConfirmation3" 
+              [(ngModel)]="form.file" required>
+           
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Short_Description</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" name="shortd" [(ngModel)]="form.shortd" id="exampleTextarea" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-10 offset-2">
+
+            <button type="submit" class="btn btn-primary" [disabled]="!signupForm.valid">Add product</button>
+
+           
+
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <table class="table">
+    <tr *ngFor="let r of response">
+      <td>{{r.name}}</td>
+      <td>{{r.price}}</td>
+      <td>{{r.shortd}}</td>
+      <td>{{r.quantity}}</td>
+     <td> <a href=""  class="btn btn-primary">Edit</a></td>
+      <td><button class="btn btn-dangar">Delete</button></td>
+    </tr>
+  </table>
+</div>
+

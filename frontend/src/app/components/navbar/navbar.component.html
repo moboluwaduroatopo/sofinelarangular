@@ -1,0 +1,98 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Navbar</a>
+  <div>
+      <!-- <a class="navbar-brand" routerLink="login">Login</a>
+    <a class="navbar-brand" href="#"  >Logout</a>
+    <a class="navbar-brand" routerLink="profile">Profile</a> -->
+    <a class="navbar-brand" routerLink="login" *ngIf="!loggedIn">Login</a>
+    <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a>
+    <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn">Profile</a>
+    <a class="navbar-brand" routerLink="addproduct" *ngIf="loggedIn">AddProduct</a>
+  </div>
+
+</nav>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+  <div class="container">
+
+    <!-- Brand -->
+    <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+      <strong class="blue-text">MOTEE</strong>
+    </a>
+
+    <!-- Collapse -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!-- Left -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link waves-effect"routerLink="">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-effect" href="" routerLink="">About </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-effect" href=""
+          routerLink="">Contact us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-effect" routerLink="addproduct" *ngIf="loggedIn">AddProduct</a>
+        </li>
+      </ul>
+
+      <!-- Right -->
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link waves-effect">
+            <span class="badge red z-depth-1 mr-1"> 1 </span>
+            <i class="fas fa-shopping-cart"></i>
+            <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="" class="nav-link waves-effect" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="" routerLink="/login" class="nav-link border border-light rounded waves-effect" *ngIf="!loggedIn">
+            <!-- <i class="fab fa- mr-2"></i> -->
+            Login
+          </a>
+        </li>
+        <li class="nav-item">
+<a href=""  routerLink="/signup" class="nav-link border border-light rounded waves-effect" *ngIf="!loggedIn">
+            <!-- <i class="fab fa-user mr-2"></i> -->
+            Register
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href=""  routerLink="/profile" class="nav-link border border-light rounded waves-effect" *ngIf="loggedIn">
+                      <!-- <i class="fab fa-user mr-2"></i> -->
+                     Profile
+                    </a>
+                  </li>
+                   <li class="nav-item">
+<a href=""  routerLink="/register" class="nav-link border border-light rounded waves-effect" (click)="logout($event)" *ngIf="loggedIn">
+            <!-- <i class="fab fa-user mr-2"></i> -->
+            Logout
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</nav>
